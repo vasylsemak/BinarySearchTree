@@ -49,11 +49,6 @@ class BST {
     }
     return curNode.value;
   }
-
-  contains(val) {}
-
-  // dfs
-  // bfs
 }
 
 let x = new BST(5);
