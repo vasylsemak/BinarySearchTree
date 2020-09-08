@@ -94,6 +94,22 @@ class BST {
     traverse(this.root);
     return treeArr;
   }
+
+  // Breath First Search
+  bfs() {
+    const treeArr = [];
+    const queue = [];
+    queue.push(this.root);
+
+    while (queue.length) {
+      const curNode = queue.shift();
+      treeArr.push(curNode.value);
+
+      if (curNode.left) queue.push(curNode.left);
+      if (curNode.right) queue.push(curNode.right);
+    }
+    return treeArr;
+  }
 }
 
 let x = new BST(15);
