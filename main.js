@@ -60,12 +60,48 @@ class BST {
     }
     return 'No value!';
   }
+
+  // Depth First Search
+  dfsPreOrder() {
+    const treeArr = [];
+    const traverse = node => {
+      treeArr.push(node.value);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    };
+    traverse(this.root);
+    return treeArr;
+  }
+
+  dfsInOrder() {
+    const treeArr = [];
+    const traverse = node => {
+      if (node.left) traverse(node.left);
+      treeArr.push(node.value);
+      if (node.right) traverse(node.right);
+    };
+    traverse(this.root);
+    return treeArr;
+  }
+
+  dfsPostOrder() {
+    const treeArr = [];
+    const traverse = node => {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      treeArr.push(node.value);
+    };
+    traverse(this.root);
+    return treeArr;
+  }
 }
 
-let x = new BST(5);
+let x = new BST(15);
 x.insert(3);
-x.insert(8);
-x.insert(4);
-x.insert(1);
+x.insert(36);
+x.insert(2);
+x.insert(12);
+x.insert(28);
+x.insert(39);
 
-console.log(x.min());
+console.log(x.dfsPreOrder());
