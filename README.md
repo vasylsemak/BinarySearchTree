@@ -1,3 +1,3 @@
 # BinarySearchTree
 
-## BST implementation using JavaScript
+## BST implementation with JavaScript
