@@ -56,7 +56,7 @@ class BST {
     while (curNode) {
       if (val === curNode.value) return true;
       if (val < curNode.value) curNode = curNode.left;
-      if (val > curNode.value) curNode = curNode.right;
+      else curNode = curNode.right;
     }
     return 'No value!';
   }
