@@ -49,6 +49,17 @@ class BST {
     }
     return curNode.value;
   }
+
+  contains(val) {
+    let curNode = this.root;
+
+    while (curNode) {
+      if (val === curNode.value) return true;
+      if (val < curNode.value) curNode = curNode.left;
+      if (val > curNode.value) curNode = curNode.right;
+    }
+    return 'No value!';
+  }
 }
 
 let x = new BST(5);
